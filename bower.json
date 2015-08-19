@@ -1,0 +1,23 @@
+{
+  "name": "local-date",
+  "main": "index.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ismyrnow/local-date",
+  "authors": [
+    "Ishmael Smyrnow <ismyrnow@appgeo.com>"
+  ],
+  "description": "Helper for dealing with JS dates independent of time or timezone.",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "date",
+    "timezone",
+    "iso"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "tests.js"
+  ]
+}
