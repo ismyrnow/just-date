@@ -1,0 +1,24 @@
+{
+  "name": "local-date",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ismyrnow/local-date.git"
+  },
+  "keywords": [
+    "date",
+    "timezone",
+    "iso"
+  ],
+  "author": "Ishmael Smyrnow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ismyrnow/local-date/issues"
+  },
+  "homepage": "https://github.com/ismyrnow/local-date#readme"
+}
