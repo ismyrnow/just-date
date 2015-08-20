@@ -6,7 +6,7 @@
     define(['b'], factory);
   } else {
     // Browser globals
-    root.LocalDate = factory(root.b);
+    root.JustDate = factory(root.b);
   }
 }(this, function (b) {
 
@@ -16,7 +16,7 @@
   // YYYY-MM-DD
   var ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
-  function LocalDate(value) {
+  function JustDate(value) {
     if (!value) {
       this.date = null;
     }
@@ -33,7 +33,7 @@
     return this;
   }
 
-  LocalDate.prototype.toString = function () {
+  JustDate.prototype.toString = function () {
     if (!this.date) {
       return '';
     }
@@ -47,7 +47,7 @@
     return dateString;
   };
 
-  LocalDate.prototype.toFormattedString = function () {
+  JustDate.prototype.toFormattedString = function () {
     if (!this.date) {
       return '';
     }
@@ -62,6 +62,6 @@
   }
   // END index.js
 
-  return LocalDate;
+  return JustDate;
 
 }));

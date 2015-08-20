@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/ismyrnow/local-date.svg)](https://travis-ci.org/ismyrnow/local-date)
+[![Build Status](https://travis-ci.org/ismyrnow/just-date.svg)](https://travis-ci.org/ismyrnow/just-date)
 
-# LocalDate
+# JustDate
 
 Helper for dealing with JS dates independent of time or timezone.
 
@@ -17,19 +17,21 @@ This library helps with a few conventions:
 ## Install
 
 ```
-npm install local-date
+npm install just-date
+# or
+bower install just-date
 ```
 
 ## Usage
 
 ```javascript
-var LocalDate = require('local-date');
+var JustDate = require('local-date');
 
-var localDate = new LocalDate('2015-01-01');
+var justDate = new JustDate('2015-01-01');
 
-localDate.toString(); // => '2015-01-01'
-localDate.toFormattedString(); // => '1/1/2015'
-localDate.date // (instanceof Date) => 'Thu Jan 01 2015 00:00:00 GMT-0500...'
+justDate.toString(); // => '2015-01-01'
+justDate.toFormattedString(); // => '1/1/2015'
+justDate.date // (instanceof Date) => 'Thu Jan 01 2015 00:00:00 GMT-0500...'
 ```
 
 ## Testing

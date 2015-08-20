@@ -3,7 +3,7 @@
 // YYYY-MM-DD
 var ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
-function LocalDate(value) {
+function JustDate(value) {
   if (!value) {
     this.date = null;
   }
@@ -20,7 +20,7 @@ function LocalDate(value) {
   return this;
 }
 
-LocalDate.prototype.toString = function () {
+JustDate.prototype.toString = function () {
   if (!this.date) {
     return '';
   }
@@ -34,7 +34,7 @@ LocalDate.prototype.toString = function () {
   return dateString;
 };
 
-LocalDate.prototype.toFormattedString = function () {
+JustDate.prototype.toFormattedString = function () {
   if (!this.date) {
     return '';
   }
@@ -48,4 +48,4 @@ function pad2(number) {
   return number < 10 && number >= 0 ? '0' + number : number;
 }
 
-module.exports = LocalDate;
+module.exports = JustDate;

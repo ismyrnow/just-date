@@ -1,5 +1,5 @@
 {
-  "name": "local-date",
+  "name": "just-date",
   "version": "1.0.0",
   "description": "Helper for dealing with JS dates independent of time or timezone.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ismyrnow/local-date.git"
+    "url": "git+ssh://git@github.com/ismyrnow/just-date.git"
   },
   "keywords": [
     "date",
@@ -18,9 +18,9 @@
   "author": "Ishmael Smyrnow",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ismyrnow/local-date/issues"
+    "url": "https://github.com/ismyrnow/just-date/issues"
   },
-  "homepage": "https://github.com/ismyrnow/local-date#readme",
+  "homepage": "https://github.com/ismyrnow/just-date#readme",
   "devDependencies": {
     "eslint": "^1.2.0",
     "tap-spec": "^4.0.2",
