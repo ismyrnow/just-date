@@ -14,22 +14,20 @@
   'use strict';
 
   // YYYY-MM-DD
-  var ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+  var DATE_FORMAT = /^\d{4}-\d{2}-\d{2}$/;
 
   function JustDate(value) {
     if (!value) {
       this.date = null;
     }
     else if (value instanceof Date) {
-      // Assume we want the date in the UTC timezone. This may be confusing, but the alternative is to not accept dates at all.
-      var isoDate = value.toISOString().substring(10);
-      this.date = new Date(isoDate + ' 00:00:00');
+      this.date = new Date(value.getFullYear(), value.getMonth(), value.getDate());
     }
-    else if (typeof value === 'string' && ISO_DATE.test(value)) {
+    else if (typeof value === 'string' && DATE_FORMAT.test(value)) {
       this.date = new Date(value + ' 00:00:00');
     }
     else {
-      throw new Error('Invalid date supplied. Please specify a date object or an ISO date string (YYYY-MM-DD).');
+      throw new Error('Invalid date supplied. Please specify a date object or date string in YYYY-MM-DD format.');
     }
 
     return this;

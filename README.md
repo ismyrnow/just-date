@@ -11,8 +11,8 @@ Dealing with dates in JavaScript is hard. JavaScript Date objects are represente
 This library helps with a few conventions:
 
 - Serialize dates (e.g. to transmit over a network) as strings in `YYYY-MM-DD` format (no time or timezone is implied).
-- When constructed with a Date object, use date at midnight in UTC timezone (common storage format).
-- If you need the Date object, it is provided to you as midnight local time (this avoids timezone shifting).
+- Construct objects using string format (`YYYY-MM-DD`) or date objects (local time is used).
+- If you need the Date object, it is provided to you as midnight local time (this avoids timezone shifting when used locally).
 - Formatted string output without time (`M/D/YYYY`).
 
 The key here is helping you to represent your dates without a time or timezone, and having conventions about how to interpret dates in Date objects when you need them.
@@ -42,14 +42,18 @@ justDate.date; // => {Date} 'Sat Jul 04 2015 00:00:00 GMT-0400...'
 // Date constructor
 // ----------------
 
-var localDate = new Date('2015-07-04'); // => JS assumes you mean midnight UTC.
-localDate.getDate(); // => 3 (ouch! notice the shifted date)
+// Here, JS assumes you mean midnight UTC time. If you are behind UTC/GMT, your date will be shifted.
+var dontDoThis = new Date('2015-07-04');
+dontDoThis.getDate(); // => 3 (ouch!)
 
-var justDate2 = new JustDate(localDate); // When passing a Date in the constructor, UTC timezone is assumed.
+// Here, JS assumes you mean midnight in local time.
+// Just don't call `toString()` on this and pass it to another system
+var localDate = new Date(2015, 6, 4);
 
-justDate2.toString(); // => '2015-07-04'
-justDate2.toFormattedString(); // => '7/4/2015'
-justDate2.date; // => {Date} 'Sat Jul 04 2015 00:00:00 GMT-0400...'
+// When passing a Date object in the constructor, local time is assumed while extracting the date.
+justDate = new JustDate(localDate);
+
+// Same results as above.
 ```
 
 ## Testing
