@@ -21,7 +21,9 @@
       this.date = null;
     }
     else if (value instanceof Date) {
-      this.date = new Date(value.getFullYear(), value.getMonth(), value.getDate());
+      // Assume we want the date in the UTC timezone. This may be confusing, but the alternative is to not accept dates at all.
+      var isoDate = value.toISOString().substring(10);
+      this.date = new Date(isoDate + ' 00:00:00');
     }
     else if (typeof value === 'string' && ISO_DATE.test(value)) {
       this.date = new Date(value + ' 00:00:00');
