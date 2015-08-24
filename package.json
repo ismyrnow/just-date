@@ -1,10 +1,11 @@
 {
   "name": "just-date",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Helper for dealing with JS dates independent of time or timezone.",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js && tape ./tests.js | tap-spec"
+    "test": "eslint index.js && tape ./tests.js | tap-spec",
+    "build": "gluejs --include index.js --out dist/just-date.js --global JustDate --amd && uglifyjs dist/just-date.js -o dist/just-date.min.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
   "homepage": "https://github.com/ismyrnow/just-date#readme",
   "devDependencies": {
     "eslint": "^1.2.0",
+    "gluejs": "^2.3.9",
     "tap-spec": "^4.0.2",
-    "tape": "^4.2.0"
+    "tape": "^4.2.0",
+    "uglifyjs": "^2.4.10"
   }
 }
