@@ -5,7 +5,7 @@ r.m[0] = {
 'use strict';
 
 // YYYY-MM-DD
-var DATE_FORMAT = /^\d{4}-\d{2}-\d{2}$/;
+var DATE_FORMAT = /^(\d{4})-(\d{2})-(\d{2})$/;
 
 function JustDate(value) {
   if (!value) {
@@ -15,7 +15,8 @@ function JustDate(value) {
     this.date = new Date(value.getFullYear(), value.getMonth(), value.getDate());
   }
   else if (typeof value === 'string' && DATE_FORMAT.test(value)) {
-    this.date = new Date(value + ' 00:00:00');
+    var dateParts = value.match(DATE_FORMAT).splice(1);
+    this.date = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
   }
   else {
     throw new Error('Invalid date supplied. Please specify a date object or date string in YYYY-MM-DD format.');
