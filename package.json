@@ -4,7 +4,7 @@
   "description": "Helper for dealing with JS dates independent of time or timezone.",
   "main": "index.js",
   "scripts": {
-    "test": "eslint index.js && tape ./tests.js | tap-spec",
+    "test": "eslint index.js && tape ./test/index.js | tap-spec",
     "build": "gluejs --include index.js --out dist/just-date.js --global JustDate --amd && uglifyjs dist/just-date.js -o dist/just-date.min.js"
   },
   "repository": {

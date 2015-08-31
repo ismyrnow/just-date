@@ -19,7 +19,6 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "index.js",
-    "tests.js"
+    "index.js"
   ]
 }

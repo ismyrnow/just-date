@@ -1,5 +1,5 @@
 var test = require('tape');
-var JustDate = require('./index');
+var JustDate = require('../index');
 
 test('module exists', function (t) {
   t.equals(typeof JustDate, 'function', 'Module should export a function');
@@ -8,7 +8,7 @@ test('module exists', function (t) {
 
 test('string constructor', function (t) {
   var d = new JustDate('2015-07-04');
-  
+
   t.equals(d.toString(), '2015-07-04', 'toString returns original YYYY-MM-DD');
   t.equals(d.toFormattedString(), '7/4/2015', 'toFormattedString returns M/D/YYYY');
   t.equals(d.date.getDate(), 4, 'date number is maintained');
