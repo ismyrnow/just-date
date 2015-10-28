@@ -36,3 +36,15 @@ test('time is zeroed out', function (t) {
 
   t.end();
 });
+
+test('year is before 1000', function (t) {
+  try {
+    var d = new JustDate('999-07-04');
+    t.equals(d.toString(), '999-07-04', 'toString returns years less than 1000');
+  }
+  catch (err) {
+    t.fail('string constructor should work with years less than 1000');
+  }
+
+  t.end();
+});
